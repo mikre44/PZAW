@@ -1,0 +1,26 @@
+.component{
+  width:max-content;
+  flex-direction:row;
+  display: flex;
+  margin-bottom: 30px;
+}
+img{
+  max-height: 150px;
+}
+p{
+  font-size: small;
+}
+.component>div{
+  display: flex;
+  flex-direction: column;
+  max-width: 80px;
+}
+.component>div>:nth-child(1){
+  height: 300px;
+}
+.component>div>:nth-child(n+1){
+  height: 70px;
+}
+.component>div>:nth-child(2n){
+  background-color: rgb(202, 202, 202);
+}
