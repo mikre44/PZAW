@@ -6,9 +6,9 @@ interface songProps{
 function Song({title, length}: songProps){
 
     return(
-        <div>
+        <div className="container-fluid d-flex flex-row justify-content-between">
             <p>{title}</p>
-            <p>{length}</p>
+            <p className="">{length}</p>
         </div>
     )
 }

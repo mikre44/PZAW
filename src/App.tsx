@@ -2,99 +2,105 @@ import './App.css'
 import Books from './components/Books';
 import Movies from './components/Movies'
 import MusicAlbum from './components/MusicAlbum'
+
+import "./bootstrap.min.css";
+
 function App() {
 
 
-  const setMovies = [
+  const setMovies = [// zmienna wygenerowana prze ai
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjv1slLSC06_v7bow8DGdMW0SyzVywT2IrdpL580AqWg&s=10",
-    title: "harry potter", 
-    date: 1999, 
-    pages: 5003
+      img: "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
+      title: "Incepcja",
+      year: 2010,
+      rating: 8.5
     },
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb0AxApa1ret4SC4faVvR5LRdoamU-gVM4uRAStN2vpA&s=10" ,
-      title: "akademia pana kleksa",
-      date: 1299, 
-      pages: 1232
+      img: "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+      title: "Interstellar",
+      year: 2014,
+      rating: 9
     },
     {
-      img: "https://fwcdn.pl/fpo/94/76/469476/8030930_1.3.jpg", 
-      title: "dune", 
-      date: 1999, 
-      pages: 1232
-    }
-  ]
-
-  const setBooks = [ // Zmienna wygenerowana przez ai
-    {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjv1slLSC06_v7bow8DGdMW0SyzVywT2IrdpL580AqWg&s=10",
-      title: "Harry Potter i Kamień Filozoficzny",
-      author: "J.K. Rowling",
-      pages: 328,
-      releaseDate: 1997
-    },
-    {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb0AxApa1ret4SC4faVvR5LRdoamU-gVM4uRAStN2vpA&s=10",
-      title: "Akademia pana Kleksa",
-      author: "Jan Brzechwa",
-      pages: 160,
-      releaseDate: 1946
-    },
-    {
-      img: "https://fwcdn.pl/fpo/94/76/469476/8030930_1.3.jpg",
+      img: "https://upload.wikimedia.org/wikipedia/en/8/8e/Dune_%282021_film%29.jpg",
       title: "Diuna",
-      author: "Frank Herbert",
-      pages: 680,
-      releaseDate: 1965
+      year: 2021,
+      rating: 7.5
     }
   ];
 
-  const setMusicAlbums = [ // Zmienna wygenerowana przez ai
+  const setBooks = [// zmienna wygenerowana przez ai
+    {
+      img: "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
+      title: "The Great Gatsby",
+      author: "F. Scott Fitzgerald",
+      pages: 180,
+      year: 2004
+    },
+    {
+      img: "https://covers.openlibrary.org/b/isbn/9780316769488-L.jpg",
+      title: "The Catcher in the Rye",
+      author: "J.D. Salinger",
+      pages: 214,
+      year: 1991
+    },
+    {
+      img: "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
+      title: "To Kill a Mockingbird",
+      author: "Harper Lee",
+      pages: 336,
+      year: 2006
+    }
+  ];
 
+  const setMusicAlbums = [// zmienna wygenerowana przez ai
     {
-      img: "https://wikimedia.org",
-      title: "★ (Blackstar)",
+      img: "https://upload.wikimedia.org/wikipedia/en/2/2d/Blackstar_%28Front_Cover%29.svg",
+      title: "Blackstar",
       band: "David Bowie",
-      type: "Art Rock / Avant-jazz",
+      type: "Art rock / Jazz rock",
       year: 2016,
+      songs: []
+    },
+    {
+      img: "https://upload.wikimedia.org/wikipedia/commons/9/92/ACDC_Back_in_Black.png",
+      title: "Back in Black",
+      band: "AC/DC",
+      type: "Hard rock",
+      year: 1980,
       songs: [
-        { title: "Blackstar", length: "9:57" },
-        { title: "Tis a Pity She Was a Whore", length: "4:52" },
-        { title: "Lazarus", length: "6:22" },
-        { title: "Sue (Or in a Season of Crime)", length: "4:40" },
-        { title: "Girl Loves Me", length: "4:51" },
-        { title: "Dollar Days", length: "4:44" },
-        { title: "I Can't Give Everything Away", length: "5:45" }
+        { title: "Hells Bells", length: "5:10" },
+        { title: "Shoot to Thrill", length: "5:17" },
+        { title: "What Do You Do for Money Honey", length: "3:33" },
+        { title: "Givin the Dog a Bone", length: "3:30" },
+        { title: "Let Me Put My Love into You", length: "4:16" },
+        { title: "Back in Black", length: "4:15" },
+        { title: "You Shook Me All Night Long", length: "3:30" },
+        { title: "Have a Drink on Me", length: "3:57" },
+        { title: "Shake a Leg", length: "4:06" },
+        { title: "Rock and Roll Ain't Noise Pollution", length: "4:15" }
       ]
     },
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb0AxApa1ret4SC4faVvR5LRdoamU-gVM4uRAStN2vpA&s=10",
-      title: "Akademia Pana Kleksa (Ścieżka dźwiękowa)",
-      band: "Andrzej Korzyński",
-      type: "Soundtrack / Muzyka filmowa",
-      year: 1983,
+      img: "https://upload.wikimedia.org/wikipedia/en/2/26/Daft_Punk_-_Random_Access_Memories.png",
+      title: "Random Access Memories",
+      band: "Daft Punk",
+      type: "Disco / Funk / Electronic",
+      year: 2013,
       songs: [
-        { title: "Witajcie w naszej bajce", length: "2:20" },
-        { title: "Kaczka dziwaczka", length: "2:05" },
-        { title: "Kwoka", length: "2:15" },
-        { title: "Na wyspach Bergamutach", length: "2:35" },
-        { title: "Pieśń o kosmicznym statku", length: "3:10" }
-      ]
-    },
-    {
-      img: "https://fwcdn.pl/fpo/94/76/469476/8030930_1.3.jpg",
-      title: "Dune (Original Motion Picture Soundtrack)",
-      band: "Hans Zimmer",
-      type: "Soundtrack / Ambient",
-      year: 2021,
-      songs: [
-        { title: "Dream of Arrakis", length: "3:08" },
-        { title: "Herald of the Change", length: "5:01" },
-        { title: "Leaving Caladan", length: "1:55" },
-        { title: "Bene Gesserit", length: "3:54" },
-        { title: "Gom Jabbar", length: "2:00" },
-        { title: "Ripples in the Sand", length: "5:14" }
+        { title: "Give Life Back to Music", length: "4:34" },
+        { title: "The Game of Love", length: "5:22" },
+        { title: "Giorgio by Moroder", length: "9:04" },
+        { title: "Within", length: "3:48" },
+        { title: "Instant Crush", length: "5:37" },
+        { title: "Lose Yourself to Dance", length: "5:53" },
+        { title: "Touch", length: "8:19" },
+        { title: "Get Lucky", length: "6:09" },
+        { title: "Beyond", length: "4:50" },
+        { title: "Motherboard", length: "5:41" },
+        { title: "Fragments of Time", length: "4:39" },
+        { title: "Doin' It Right", length: "4:11" },
+        { title: "Contact", length: "6:23" }
       ]
     }
   ];
@@ -104,8 +110,10 @@ function App() {
     <>
       <Movies movies={setMovies}/>
       <Books books={setBooks} />
-
       <MusicAlbum musicAlbums={setMusicAlbums}/>
+      <Movies movies={setMovies} since={2010}/>
+      <Books books={setBooks} sortByDate={true}/>
+      <MusicAlbum musicAlbums={setMusicAlbums} showHighestSongNumber={true}/>
     </>
   )
 }
