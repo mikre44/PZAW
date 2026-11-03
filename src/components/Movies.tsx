@@ -31,6 +31,7 @@ function Movie({movies, since}: moviesProp){
         console.log(search);
     }
 
+
     movies.sort((a, b) => a.title.localeCompare(b.title));
     return(
         <>
@@ -59,7 +60,7 @@ function Movie({movies, since}: moviesProp){
                         <p className="card-text mb-2">Rok premiery: {m.year}</p>
                         <button className="btn btn-primary" 
                         onClick={e => {e.stopPropagation(); HandleClick("Pokaż szczegóły dla " + m.title);}}>Pokaż szczegóły</button>
-
+                
                         <p className="card-text mb-2">Ocena {m.rating}</p>
                         {m.rating >= 8 && <p className="badge bg-success align-self-center">Polecany</p>}
                     </div>))
