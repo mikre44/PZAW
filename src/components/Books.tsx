@@ -15,9 +15,15 @@ interface BooksProp {
 
 function Book({books, sortByDate}: BooksProp) {
     const [isOpen, setIsOpen] = useState(true);
+    const [search, setSearch] = useState("");
 
     function ToggleOpen(){
         setIsOpen(!isOpen);
+    }
+
+    function HandleSearch(e: React.ChangeEvent<HTMLInputElement>){
+        setSearch(e.currentTarget.value);
+        console.log(search);
     }
 
     if(sortByDate === true)
@@ -33,8 +39,18 @@ function Book({books, sortByDate}: BooksProp) {
             </div>
             
             <div className="container-fluid d-flex flex-row flex-wrap align-items-stretch justify-content-center gap-4 row">
+                <input
+                type="text"
+                className="form-control"
+                placeholder="Wpisz tytuł"
+                id="book-search"
+                onChange={HandleSearch}
+                />
+                <p className="alert alert-info">{search}</p>
 
-                {isOpen && books.map((b) => (// a tu nie ma potrzeby innej niż jednakowość kodu by urzyć słowa "book" (odnośnik do komentarza w MusicAlbum.tsx 25)
+                {isOpen && books.map((b) => (
+                // a tu nie ma potrzeby innej niż jednakowość kodu by urzyć słowa "book" (odnośnik do komentarza w MusicAlbum.tsx 25)
+
                     <div className="card shadow-sm text-center m-2 col" style={{ width: '300px' }}>
                         <img src={b.img} alt={b.title} className="card-img-top rounded mb-3" style={{ height: '250px', width: '100%', objectFit: 'contain' }}/>
                         <p className="card-title fw-bold mb-2">{b.title}</p>
